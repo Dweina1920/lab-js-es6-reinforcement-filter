@@ -109,9 +109,27 @@ getUsersCreditDetails(usersArray);
 
 const genderView = (users) => {
   // Your code goes here ...
+  let femaleUsers = users
+    .filter((user) => user.gender === "female")
+    .map((x) => `${x.firstName} ${x.lastName}`);
+  // console.log(femaleUsers);
+  let maleUsers = users
+    .filter((user) => user.gender === "male")
+    .map((x) => `${x.firstName} ${x.lastName}`);
+  // console.log(maleUsers);
+  //return
+  //   `{femaleUsers: ${femaleUsers},
+  //   maleUsers: ${maleUsers}}`
+
+  let usersGender = {
+    femaleUsers,
+    maleUsers,
+  };
+  return usersGender;
 };
 
 console.log("gender view", genderView(usersArray));
+
 // expected output:
 // {
 //    femaleUsers: [ 'Tracie May', 'Kendra Hines', 'Rachelle Schneider', 'Lizzie Alford' ],
